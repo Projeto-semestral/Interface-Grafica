@@ -4,10 +4,11 @@ const bodyParser = require('body-parser')
 const flash = require('connect-flash');
 const app = express();
 const port = 5000;
-
-/* importando o modelo */
 const modelo = require('./models/modelos');
-var Livro = modelo.Livro; //Vinculação de tipo
+
+
+
+var Livro = modelo.Livro; 
 
 let livro_1 = new Livro(1,"O pequeno principe", "comedia", "Antoine de Saint-Exupéry","06/04/1943"); 
 let livro_2 = new Livro(2,"teste", "comedia", "Richard","08/01/2000");
@@ -22,17 +23,15 @@ var login = "admin"
 var password = "123"
 var matricula = "123"
 
-app.use(session({secret:'hsdjnnckjsdncsnkcjnd',resave:false,saveUninitialized: true}))
-app.use(flash());
+app.use(session({secret:'hsdjnnckjsdncsnkcjnd'}))
 app.use(bodyParser.urlencoded({extended:true}))
 
-/* Configurando a template engine. */
 app.set('view engine', 'ejs');
 app.set('views', './views');
- 
 
-// app.get('/', listProjectHandler);
-
+app.get('/',(req, res) =>{
+  res.render('tabela_livro.ejs',{lista_livros : livro})
+} );
 
 
   app.post('/login', (req, res) => {
@@ -60,6 +59,7 @@ app.set('views', './views');
       })
     }else{
       res.render('login.ejs');
+      
     }
     
   });
@@ -71,24 +71,14 @@ app.set('views', './views');
         console.log(err);
       } else {
         res.redirect('/');
-        // req.flash('success_msg', 'Você foi desconectado com sucesso!');
       }
     });
   });
 
 
-/* Configurando o diretório que serve arquivos estáticos.*/
 app.use(express.static('public'));
-
-
-// const modelo = require('./models/modelos');
-
 app.listen(port, listenHandler);
 
-   
-app.get('/',(req, res) =>{
-  res.render('tabela_livro.ejs',{lista_livros : livro})
-} );
 
 
 function listenHandler(){
