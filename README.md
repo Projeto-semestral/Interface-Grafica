@@ -1,6 +1,6 @@
 # Interface-Grafica
 ## Intalação nodemon
-npm install -g nodemon
+" npm install -g nodemon "
 ## Build do projeto
 Na raiz do projeto digite "npm install" no terminal para instalar todas<br> dependencias do projeto 
 ## Para rodar o Projeto 
