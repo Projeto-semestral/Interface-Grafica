@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Numero Registro</th>
+            <th>Titulo</th>
+            <th>Assunto</th>
+            <th>Autor</th>
+            <th>Data</th>
+            <!-- <th>edição</th> -->
+        </tr>
+        </thead>
+        <tbody class="dados" >
+          <% for(var i=0; i< lista_livros.length; ++i) { %>
+            <tr >
+                <td id="dados"><%=lista_livros[i].numero_registro %></td>
+                <td id="dados"><%=lista_livros[i].titulo %></td>
+                <td id="dados"><%=lista_livros[i].assunto %></td>
+                <td id="dados"><%=lista_livros[i].autor %></td>
+                <td id="dados"><%=lista_livros[i].data_public %></td>
+                <!-- <td id="ed"><i class="bi bi-trash"></i> <i class="bi bi-pencil-fill"></i></td> -->
+                <!-- <td><i class="bi bi-pencil-fill"></i></td> -->
+                
+            </tr>
+         <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>

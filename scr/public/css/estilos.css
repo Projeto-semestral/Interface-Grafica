@@ -1,0 +1,170 @@
+
+.container-tabela{
+    margin: auto;
+}
+.container{
+    display:grid;
+    grid-template-columns: 1fr;
+    /* padding-top: 2rem; */
+}
+
+.container-search{
+    display: flex;
+    margin-top:4rem
+}
+.container-entrar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #ffff;
+    /* width: 100%; */
+    /* background-color: red; */
+}
+
+
+.container-entrar input{
+  background-color: #ff1c1c;
+  color: #ffffff;
+  width: 9rem;
+  font-weight: 900;
+  border: none;
+  height: 3rem;
+  border-radius: 3rem;
+  margin-left: 16rem;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.container-footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  width: 100%;
+}
+
+.container-entrar input:hover{
+    background-color: #fc4949;;
+}
+
+
+.dados{
+  background-image: linear-gradient(180deg, #f78787, #e180f34d);
+  box-shadow: -1px 20px 12px 0px rgb(0 0 0 / 10%);
+  color: white;
+}
+.input-group{
+  display: flex;
+  justify-content:space-between;
+  background-color: yellow;
+  padding: 10px;
+  width:100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  color:#ffffffe2;
+}
+.dados th{
+  border-bottom: none;
+  /* border-color: none;; */
+}
+
+.dados td{
+  border-bottom: none;
+  /* border-color: none; */
+}
+
+#ed{
+  display:flex;
+  justify-content:space-between;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #f78787;
+    border-radius: 20px;
+    margin-top: 5%;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    width: 65rem;
+  }
+  
+  input[type="text"] {
+    width: 30rem;
+    border: none;
+    height: 2rem;
+    border-radius: 1rem;
+    padding-left: 1rem;
+  }
+
+
+
+  .search-box .search-button {
+    background-color: #ffffff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .search-box .search-button i {
+    background-color: #ffffff;
+    font-size: 20px;
+  }
+
+  select {
+    -webkit-appearance: none; /* Remove a aparência padrão do select no Safari */
+    -moz-appearance: none; /* Remove a aparência padrão do select no Firefox */
+    appearance: none; /* Remove a aparência padrão do select */
+    background-color: #ffffffeb; /* Define a cor de fundo */
+    border: none; /* Remove a borda */
+    border-radius: 1rem;
+    /* margin-left: 1rem; */
+    height: 2rem;
+    width: 12rem;
+    text-align: center;
+    font-size: 16px; /* Define o tamanho da fonte */
+    font-weight: bold; /* Define a espessura da fonte */
+    color: #333; /* Define a cor do texto */
+    cursor: pointer; /* Muda o cursor para o ponteiro quando hover */
+    outline: none; /* Remove o contorno ao selecionar */
+    /* margin-right: 1rem; */
+  }
+  
+  .container{
+    padding-top: 2rem;
+    margin: auto;
+  }
+
+  select:hover {
+    background-color: #ffffffc3;
+  }
+  input[type="text"]:hover {
+    background-color: #ffffffc3;
+  }
+  
+  select:active, select:focus {
+    background-color: #ffffffeb;
+  }
+
+  input[type="text"]:focus {
+    background-color: #ffffffc3;
+outline: none;  }
+
+input::placeholder{
+  /* color:red */
+  font-size: 16px; /* Define o tamanho da fonte */
+    font-weight: bold; /* Define a espessura da fonte */
+    color: #333; /* Define a cor do texto */
+    cursor: pointer; /* Muda o cursor para o ponteiro quando hover */
+    outline: none; /* Remove o contorno ao selecionar */
+}

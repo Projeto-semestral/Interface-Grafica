@@ -1,0 +1,68 @@
+<%-include('header') -%>
+<link rel="stylesheet" href="css/estilos.css" />
+<title>Paginal de busca</title>
+   <div class="container-entrar">
+    <div><h1>Procure o livro</h1></div>
+     <div>
+                <a href="/login"><input type="button" value="Entrar"></a>
+    </div>
+    </div>
+
+    <div class="container"> 
+        <div class="container-search">
+            <div class="search-box">
+                <div>
+                    <input type="text" placeholder="Buscar">
+                </div>
+                <div> 
+                <select id="filtro">
+                    <option value="numero_resgistro">Numero de registro</option>
+                    <option value="titulo">Titulo</option>
+                    <option value="assunto">Assunto</option>
+                    <option value="autor">Autor</option>
+                    <option value="data_publicacao">Data de publicação</option>
+                </select>
+            </div>
+            <div>
+                    <button class="search-button">
+                         <i class="bi bi-search"></i>
+                     </button>
+                    </div>
+          </div>
+        </div>
+        </div>
+      
+
+      <div class="container">
+        <h1></h1>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Numero Registro</th>
+                <th>Titulo</th>
+                <th>Assunto</th>
+                <th>Autor</th>
+                <th>Data</th>
+                <!-- <th>edição</th> -->
+            </tr>
+            </thead>
+            <tbody class="dados" >
+              <% for(var i=0; i< lista_livros.length; ++i) { %>
+                <tr >
+                    <td id="dados"><%=lista_livros[i].numero_registro %></td>
+                    <td id="dados"><%=lista_livros[i].titulo %></td>
+                    <td id="dados"><%=lista_livros[i].assunto %></td>
+                    <td id="dados"><%=lista_livros[i].autor %></td>
+                    <td id="dados"><%=lista_livros[i].data_public %></td>
+                    <!-- <td id="ed"><i class="bi bi-trash"></i> <i class="bi bi-pencil-fill"></i></td> -->
+                    <!-- <td><i class="bi bi-pencil-fill"></i></td> -->
+                    
+                </tr>
+             <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
