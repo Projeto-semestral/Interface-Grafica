@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-6 mx-auto">
                         <p class="text-xxl-center">Cadastro Livro</p>
-                        <form method="POST">
+                        <form onsubmit="manda()">
                             <div class="mb-3">
                                 <label for="titulo" class="form-label">Titulo</label>
                                 <input type="text" class="form-control" id="titulo" name="titulo" value="" required>
@@ -30,12 +30,14 @@
                                 <input type="text" class="form-control" value="" id="data_public" name="data_public" required>
                             </div>
                             <div class="d-flex justify-content-center">
-                            <a href="/login" id="register" class="btn btn-danger w-100">Register</a>
+                            <button type="submit" id="register" class="btn btn-danger w-100">Register</button>
                            </div>
                         </form>
             </div>
         </div>
     </div>
+
+    <script src="js/adiciona.js"></script>
 
 
 

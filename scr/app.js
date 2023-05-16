@@ -1,9 +1,9 @@
 const express = require('express')
 const session  = require('express-session')
 const bodyParser = require('body-parser')
-const flash = require('connect-flash');
+const cors = require('cors');
 const app = express();
-const port = 5000;
+const port = 5020;
 const modelo = require('./models/modelos');
 
 
@@ -28,6 +28,8 @@ app.use(bodyParser.urlencoded({extended:true}))
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
+
+app.use(cors());
 
 app.get('/',(req, res) =>{
   res.render('tabela_livro.ejs',{lista_livros : livro})
@@ -84,6 +86,5 @@ app.listen(port, listenHandler);
 function listenHandler(){
     console.log(`Escutando na porta ${port}!`);
 }
-
 
 
