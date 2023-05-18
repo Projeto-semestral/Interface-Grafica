@@ -1,43 +1,71 @@
-const cadastra = document.getElementById("a")
-cadastra.addEventListener("click" , manda)
-const titulo = document.getElementById("titulo")
+// window.onload = function(){
+//     bot = document.getElementById('bot');
+//     bot_g = document.getElementById('bot_g');
+//     input = document.getElementById('in');
+//     output = document.getElementById('out');
+//     output_2 = document.getElementById('name_bd');
+//     output_3 = document.getElementById('id_bd');
+//     bot.onclick = function(){
+//         //read input:
+//         str_in = input.value;
+//         $.ajax({
+//             url: 'http://localhost:5002/api_gateway/lower_case?str_input='+str_in,
+//             dataType: 'json',
+//             crossOrigin: true,
+//             success: function(data){
+//                 res_1 = data.lowercase_str;
+//                 cripto_ajax(data.lowercase_str);
+//            }
+//         }); //Ajax
+//     } //button cripto click
 
-function fazPost(url , body) {
-    console.log(body)
-    let request  = new XMLHttpRequest
-    request.open("POST" , url , true)
-    request.setRequestHeader("Content-type" , "application/json")
-    request.send(JSON.stringify.body)
+//     bot_g.onclick = function(){
+        // str_cripto = output.value;
+        // persistence_ajax(str_cripto);
+//     }// button gravar click
+
+//     function cripto_ajax(str_data){
+//         $.ajax({
+//           url: 'http://localhost:5002/api_gateway/cripto?str_input='+str_data,
+//           dataType: 'json',
+//           crossOrigin: true,
+//           success: function(data){
+//                 res_1 = data.cripto_str;
+//                 output.value = res_1;
+//           }
+//         });
+//     } //cripto ajax
+
+   
 
 
-    request.onload = function () {
-        console.log(this.responseText)
-    }
+// }
+// //onload
+const usuario = document.getElementById("out")
+const assunto = document.getElementById("assunto")
+const autor = document.getElementById("autor")
+const data_public = document.getElementById("data_public")
+const gravar = document.getElementById("bot_g")
+gravar.addEventListener("click",adiciona)
 
-    return request.responseText
+// console.log(valor)
+function adiciona() {
+    const valor = usuario.value
+    const valor1 = assunto.value
+    const valor2 = autor.value
+    const valor3 = data_public.value
+    console.log(valor + valor1 + valor2 + valor3)
+    persistence_ajax(valor,valor1,valor2,valor3);
 
 }
 
 
-function manda() {
-    event.preventDefault()
-    url=`ttp://localhost:5002/api_gateway/persistence?str_input=`
-    const titulo = document.getElementById("titulo").value
-    const assunto = document.getElementById("assunto").value
-    const autor = document.getElementById("autor").value
-    const data_public = document.getElementById("data_public").value
 
-    console.log(titulo)
-    console.log(assunto)
-    console.log(autor)
-    console.log(data_public)
 
-body = {
-    "titulo" : titulo,
-    "assunto" : assunto,
-    "autor" : autor,
-    "data_public" : data_public
-}
-
-    fazPost(url , body)
-}
+function persistence_ajax(str_data,sla,autor,a){
+    $.ajax({
+      url: `http://localhost:5002/api_gateway/persistence?str_input=${encodeURIComponent(str_data)}&assunto=${encodeURIComponent(sla)}&autor=${encodeURIComponent(autor)}&a=${encodeURIComponent(a)}`,
+      dataType: 'json',
+      crossOrigin: true,
+    });
+} //persistence ajax
