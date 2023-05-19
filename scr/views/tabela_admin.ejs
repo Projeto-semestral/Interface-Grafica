@@ -18,7 +18,7 @@
         <div class="container-search">
             <div class="search-box">
                 <div>
-                    <input type="text" placeholder="Buscar">
+                    <input type="text" id="search_input" name="search_input" placeholder="Digite o titulo desejado ...">
                 </div>
                 <div> 
                 <!-- <select id="filtro">
@@ -44,7 +44,6 @@
           <table class="table">
             <thead>
               <tr>
-                <th>Numero Registro</th>
                 <th>Titulo</th>
                 <th>Assunto</th>
                 <th>Autor</th>
@@ -52,8 +51,8 @@
                 <!-- <th>edição</th> -->
             </tr>
             </thead>
-            <tbody class="dados" >
-              <tr >
+            <tbody class="dados" id="dados" >
+              <tr>
                 <td id="titulo"></td>
                 <td id="assunto"></td>
                 <td id="autor"></td>

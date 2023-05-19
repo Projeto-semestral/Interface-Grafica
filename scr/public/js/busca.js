@@ -1,11 +1,16 @@
 const busca = document.getElementById("busca")
-busca.addEventListener("click", handlebusca)
+// busca.addEventListener("click", procura)
 
-function handlebusca() {
-    console.log("passei")
+    // function procura(dados) {
+    //     const search_input = document.getElementById("search_input").value
+    //     console.log(search_input)
+    //     console.log(Object.values(dados).filter( item => item.titulo ===  "vamos"))
+    //   }
+
+
+window.onload = function() {
     persistence_ajax()
 }
-
 
 function persistence_ajax(){
     $.ajax({
@@ -14,6 +19,7 @@ function persistence_ajax(){
       crossOrigin: true,
       success: function(data){
         exibirDados(data)
+        procura(data)
   }
     });
 } 
@@ -21,42 +27,26 @@ function persistence_ajax(){
 // console.log(data)
 
 function exibirDados(dados) {
-    const tbody = document.querySelector(".dados");
-  
-    if (dados && dados.length > 0) {
-      // Limpar o conteúdo atual da tabela
-      tbody.innerHTML = "";
-  
-      // Iterar sobre os dados e criar linhas para cada item
-      dados.forEach(function (item) {
-        const tr = document.createElement("tr");
-  
-        // Criar células e definir o conteúdo
-        const tituloCell = document.createElement("td");
-        tituloCell.textContent = item.titulo;
-        tr.appendChild(tituloCell);
-  
-        const assuntoCell = document.createElement("td");
-        assuntoCell.textContent = item.assunto;
-        tr.appendChild(assuntoCell);
-  
-        const autorCell = document.createElement("td");
-        autorCell.textContent = item.autor;
-        tr.appendChild(autorCell);
-  
-        const dataCell = document.createElement("td");
-        dataCell.textContent = item.data;
-        tr.appendChild(dataCell);
-  
-        // Adicionar a linha à tabela
-        tbody.appendChild(tr);
-      });
-    }
+
+    var va  = dados.map(function(item){
+        return`
+        <tr>
+        <td>${item.titulo}</td>
+        <td>${item.autor}</td>
+        <td>${item.assunto}</td>
+        <td>${item.data}</td>
+        </tr>
+        `
+    })
+    document.querySelector(".table tbody").innerHTML = va.join("");
   }
   
+// busca os dados pelos input seach
+// const search = document.getElementById("search_input")
+// const tabela  =  document.querySelector("dados")
   
-  
-  
-  
+
+
+
   
   
